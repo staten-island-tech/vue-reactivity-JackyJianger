@@ -1,16 +1,25 @@
-<script setup>
-import AnimalCard from '../components/AnimalCard.vue'
-const animals = [
-{
-    name: "Walrus", image: "/Walrus.webp"
-},
-{
-    name:"Mark Fridlan", image:"/capy.webp"
-}];
-</script>
-
 <template>
   <main>
-    <AnimalCard v-for="animal in animals" :key ="animal.name" :animals="animal" />
+    <div class="cards-container">
+      <AnimalCard v-for="saladtopping in saladtoppings" :key="saladtopping.name" :saladtoppings="saladtopping" />
+    </div>
   </main>
 </template>
+
+<script setup>
+import AnimalCard from '../components/AnimalCard.vue'
+
+const saladtoppings = [
+  { name: "Olive", image: "/path-to-olive-image.jpg" },
+  { name: "Tomato", image: "/capy.webp" }
+];
+</script>
+
+<style scoped>
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+</style>
