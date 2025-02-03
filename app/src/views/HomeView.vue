@@ -11,7 +11,11 @@ import AnimalCard from '../components/AnimalCard.vue'
 
 const saladtoppings = [
   { name: "Olive", image: "/path-to-olive-image.jpg" },
-  { name: "Tomato", image: "/capy.webp" }
+  { name: "Tomato", image: "/capy.webp" },
+  { name:"Ranch", image:"/ranch.jpg"},
+  { name:"Chipotle Ranch", image:"/chipotle-ranch.jpg"}, 
+  { name:"", image:""}
+
 ];
 </script>
 
