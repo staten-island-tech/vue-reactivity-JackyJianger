@@ -1,16 +1,16 @@
 <template>
-    <div class="card">
+    <btn class="card">
       <h3>{{ saladtoppings.name }}</h3>
       <img :src="saladtoppings.image" alt="Image of {{ saladtoppings.name }}" class="card-image" />
-    </div>
+    </btn>
   </template>
-  
+    
   <script setup>
   defineProps({
     saladtoppings: Object,
-  })
+  });
   </script>
-  
+    
   <style scoped>
   .card {
     border: 1px solid #ddd;
@@ -20,6 +20,11 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     margin: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.1); 
   }
   
   .card-image {
