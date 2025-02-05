@@ -7,6 +7,7 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import AnimalCard from '../components/AnimalCard.vue'
 
 
@@ -22,6 +23,12 @@ const saladtoppings = [
   { name:"Corn", image:""},
   { name:"Guacamole", image:""}
 ];
+const imageVisible = ref(false);
+const selectedImage = ref('');
+const addImage = (saladtopping) => {
+  selectedImage.value = saladtopping.image; // Set the image based on the clicked topping
+  imageVisible.value = true;
+};
 </script>
 
 
