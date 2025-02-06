@@ -1,7 +1,7 @@
 <template>
     <btn class="card">
       <h3>{{ saladtoppings.name }}</h3>
-      <img :src="saladtoppings.image" alt="Image of {{ saladtoppings.name }}" class="card-image" />
+      <img :src="saladtoppings.image" :alt=" saladtoppings.name " class="card-image" />
     </btn>
   </template>
     
