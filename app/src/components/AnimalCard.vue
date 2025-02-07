@@ -28,8 +28,9 @@
   }
   
   .card-image {
-    width: 100%;
+    width: 100px;
     height: auto;
     border-radius: 4px;
+    object-fit: contain;
   }
   </style>

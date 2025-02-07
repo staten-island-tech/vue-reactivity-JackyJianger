@@ -1,9 +1,9 @@
 <template>
   <main>
     <div class="image-display">
-      <img v-if="imageVisible" :src="selectedImage" alt="Selected Topping" />
+      <img v-if="imageVisible" :src="selectedImage" alt="Selected Topping" class="stacked-image"/>
     </div>
-    <btn class="cards-container">
+    <div class="cards-container">
       <button 
         v-for="saladtopping in saladtoppings" 
         :key="saladtopping.name" 
@@ -11,7 +11,7 @@
         class="topping-button">
         <AnimalCard :saladtoppings="saladtopping" :style="cardStyle" />
       </button>
-    </btn>
+    </div>
   </main>
 </template>
 
@@ -23,14 +23,13 @@ import AnimalCard from '../components/AnimalCard.vue'
 const saladtoppings = [
   { name: "Olive", image: "/images/olives.png" },
   { name: "Tomato", image: "/images/tomato.webp" },
-  { name:"Ranch", image:"/ranch.jpg"},
+  { name:"Ranch", image:"/image/ranch.jpg"},
   { name:"Chipotle Ranch", image:"/chipotle-ranch.jpg"}, 
-  { name:"Nuts", image:""},
-  { name:"Seeds", image:""},
-  { name:"Beans", image:""},
-  { name:"Fruit", image:""},
-  { name:"Corn", image:""},
-  { name:"Guacamole", image:""}
+  { name:"Nuts", image:"/images/nuts.webp"},
+  { name:"Seeds", image:"/images/seeds.webp"},
+  { name:"Beans", image:"/images/beans.png"},
+  { name:"Fruit", image:"/images/fruit.png"},
+  { name:"Corn", image:"/images/corn.png"},
 ];
 const imageVisible = ref(false);
 const selectedImage = ref('');
@@ -51,24 +50,29 @@ const addImage = (saladtopping) => {
   justify-content: center;
 }
 .image-display {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  width: 300px; 
-  height: auto; 
-  padding: 10px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  position: relative; 
+  padding: 10px;
+  gap: 5px;
 }
 .image-display img {
   width: 100%;
   height: auto; 
+  object-fit: contain;
 }
 .topping-button {
   background: none;
   border: none;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cards-container img {
+  width: 50px;
+  height: 50px; 
+  object-fit: contain;
 }
 </style>
