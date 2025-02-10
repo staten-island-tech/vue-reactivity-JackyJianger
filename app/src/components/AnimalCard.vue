@@ -1,8 +1,8 @@
 <template>
-    <btn class="card">
+    <button class="card">
       <h3>{{ saladtoppings.name }}</h3>
       <img :src="saladtoppings.image" :alt=" saladtoppings.name " class="card-image" />
-    </btn>
+    </button>
   </template>
     
   <script setup>

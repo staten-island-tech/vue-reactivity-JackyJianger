@@ -1,7 +1,9 @@
 <template>
   <main>
     <div class="image-display">
-      <img v-if="imageVisible" :src="selectedImage" alt="Selected Topping" class="stacked-image"/>
+      <div v-for="(image, index) in selectedImages" :key="index" class="stacked-image-container">
+        <img :src="image" alt="Selected Topping" class="stacked-image" />
+      </div>
     </div>
     <div class="cards-container">
       <button 
@@ -9,14 +11,14 @@
         :key="saladtopping.name" 
         @click="addImage(saladtopping)" 
         class="topping-button">
-        <AnimalCard :saladtoppings="saladtopping" :style="cardStyle" />
+        <AnimalCard :saladtoppings="saladtopping" />
       </button>
     </div>
   </main>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { reactive, ref } from 'vue';
 import AnimalCard from '../components/AnimalCard.vue'
 
 
@@ -31,11 +33,12 @@ const saladtoppings = [
   { name:"Fruit", image:"/images/fruit.png"},
   { name:"Corn", image:"/images/corn.png"},
 ];
-const imageVisible = ref(false);
-const selectedImage = ref('');
+const selectedImages = reactive([]);
+
 const addImage = (saladtopping) => {
-  selectedImage.value = saladtopping.image;
-  imageVisible.value = true;
+  if (!selectedImages.includes(saladtopping.image)) {
+    selectedImages.push(saladtopping.image);
+  }
 };
 </script>
 
@@ -57,10 +60,23 @@ const addImage = (saladtopping) => {
   padding: 10px;
   gap: 5px;
 }
+.stacked-image-container {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+.stacked-image {
+  position: absolute;
+  width: 100px; 
+  height: 100px;
+  object-fit: contain;
+  z-index: 10;
+}
 .image-display img {
   width: 100%;
   height: auto; 
-  object-fit: contain;
+  object-fit: contain;  
 }
 .topping-button {
   background: none;
