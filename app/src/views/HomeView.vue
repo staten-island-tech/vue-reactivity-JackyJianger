@@ -1,10 +1,10 @@
 <template>
   <main>
-    <div class="image-display">
-      <div v-for="(image, index) in selectedImages" :key="index" class="stacked-image-container">
+    <img src="/images/plate.png" alt="hi" class="plates">
+    <div v-for="(image, index) in selectedImages" :key="index" class="stacked-image-container">
         <img :src="image" alt="Selected Topping" class="stacked-image" />
       </div>
-    </div>
+    <div class="image-display">    </div>
     <div class="cards-container">
       <button 
         v-for="saladtopping in saladtoppings" 
@@ -36,9 +36,7 @@ const saladtoppings = [
 const selectedImages = reactive([]);
 
 const addImage = (saladtopping) => {
-  if (!selectedImages.includes(saladtopping.image)) {
     selectedImages.push(saladtopping.image);
-  }
 };
 </script>
 
@@ -46,6 +44,13 @@ const addImage = (saladtopping) => {
 
 <style scoped>
 
+.plates{
+  position:absolute;
+  width:300px;
+  height:auto;
+  left: 0%;
+  top:40%;
+}
 .cards-container {
   display: flex;
   flex-wrap: wrap;
@@ -61,15 +66,17 @@ const addImage = (saladtopping) => {
   gap: 5px;
 }
 .stacked-image-container {
+  top: 45%; 
+  left: 0%;
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: auto;
 }
 
 .stacked-image {
   position: absolute;
-  width: 100px; 
-  height: 100px;
+  width: 200px; 
+  height: auto;
   object-fit: contain;
   z-index: 10;
 }
