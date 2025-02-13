@@ -1,6 +1,7 @@
 <template>
   <main>
     <img src="/images/plate.png" alt="hi" class="plates">
+    <button class="clearButton" @click="clear">Clear</button>
     <div v-for="(image, index) in selectedImages" :key="index" class="stacked-image-container">
         <img :src="image" alt="Selected Topping" class="stacked-image" />
       </div>
@@ -38,12 +39,20 @@ const selectedImages = reactive([]);
 const addImage = (saladtopping) => {
     selectedImages.push(saladtopping.image);
 };
+function clear() {
+  selectedImages.splice(0, selectedImages.length);
+}
+
 </script>
 
 
 
 <style scoped>
-
+.clearButton{
+  position:absolute;
+  left: 6.25%;
+  top:72%;
+}
 .plates{
   position:absolute;
   width:300px;
@@ -67,7 +76,7 @@ const addImage = (saladtopping) => {
 }
 .stacked-image-container {
   top: 45%; 
-  left: 0%;
+  left: 2.5%;
   position: absolute;
   width: 200px;
   height: auto;
