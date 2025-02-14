@@ -74,7 +74,7 @@ function clear() {
 }
 .stacked-image-container {
   top: 45%; 
-  left: 2.5%;
+  left: 17.5%;
   position: absolute;
   width: 200px;
   height: auto;
