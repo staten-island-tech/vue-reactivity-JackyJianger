@@ -26,8 +26,6 @@ import AnimalCard from '../components/AnimalCard.vue'
 const saladtoppings = [
   { name: "Olive", image: "/images/olives.png" },
   { name: "Tomato", image: "/images/tomato.webp" },
-  { name:"Ranch", image:"/image/ranch.jpg"},
-  { name:"Chipotle Ranch", image:"/chipotle-ranch.jpg"}, 
   { name:"Nuts", image:"/images/nuts.webp"},
   { name:"Seeds", image:"/images/seeds.webp"},
   { name:"Beans", image:"/images/beans.png"},
@@ -50,14 +48,14 @@ function clear() {
 <style scoped>
 .clearButton{
   position:absolute;
-  left: 6.25%;
+  left: 21.50%;
   top:72%;
 }
 .plates{
   position:absolute;
   width:300px;
   height:auto;
-  left: 0%;
+  left:15%;
   top:40%;
 }
 .cards-container {
