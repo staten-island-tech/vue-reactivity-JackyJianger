@@ -45,8 +45,15 @@ function clear() {
 <style scoped>
 .clearButton {
   position: absolute;
-  left: 21.5%;
+  left: 21.25%;
   top: 72%;
+  background: #ff6363;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 .plates {
   position: absolute;
@@ -96,15 +103,6 @@ function clear() {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.topping-button img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  transition: transform 0.2s ease-in-out;
-}
-.topping-button:hover img {
-  transform: scale(1.1);
 }
 .cards-container img {
   width: 50px;
